@@ -1,0 +1,189 @@
+body {
+  font-family: 'Inter', sans-serif; /* Fuente genérica */
+  background-color: #141c2b; /* Color de fondo claro */
+  color: #333; /* Color de texto oscuro */
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #141c2b; /* Azul oscuro para el encabezado */
+  color: #5cb4e3; /* Texto claro */
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(8, 197, 250, 0.799);
+  width: 100%;
+  position: relative;
+}
+
+/* Contenedor dentro del encabezado para centrar y espaciar */
+header > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: right;
+  padding: 1rem;
+}
+
+h1 {
+  font-size: 2rem; /* Tamaño de fuente para h1 */
+  font-weight: bold;
+  margin: 0; /* Eliminar margen por defecto del h1 */
+}
+
+button.hamburger-menu {
+  display: block;
+  color: #05c9f9;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  outline: none;
+}
+
+/* Menú de navegación */
+nav {
+  /*display: none;
+    Esto hace que el menu no aparezca, pero no me permitia hacer la animacion, por eso
+    lo dejo comentado*/
+
+  flex-direction: column;
+  width: 100%; /* Ocupa todo el ancho en móvil cuando está visible */
+  max-height: 0; /* Comienza cerrado al estar en 0, esto me ayuda a que haga el efecto de que aparece de arriba hacia abajo */
+  opacity: 0; /* crea un desvanecido para que no aparezca de golpe, esta en 0 porque al estar cerrado el navegador es invisible */
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  position: absolute; /* Para que se superponga al contenido */
+  background-color: #0f1e38; /* Fondo para el menú desplegado */
+  top: 100%; /* Ajustar según la altura del header */
+  left: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+  border-radius: 0 0 0.75rem 0.75rem;
+  overflow: hidden; /* Para que los bordes redondeados se apliquen bien */
+}
+
+nav.nav-open {
+  display: flex;
+  max-height: 300px; /* puse 300px porque se ajusta bien a los enlaces que tengo */
+  opacity: 1; /* al ponerlo en 1 se hace visible el menu al abrirlo */
+  
+  /*gracias a transition es lo que me permite tener animacion al abrir el menu */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+nav li {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box; /* Incluye relleno y borde en el ancho */
+}
+
+nav a:hover, nav a:focus {
+  background-color: #2980b9; /* Un tono más oscuro al pasar el ratón */
+  border-radius: 0.5rem;
+}
+
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+    /* Margen superior e inferior para separar del encabezado y del pie de
+     * página */
+}
+
+section {
+  background-color: #0b1528;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0px 6px 4px rgba(7, 201, 236, 0.817);
+}
+
+article {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #06b7e7;
+}
+
+article:last-child {
+  border-bottom: none;
+}
+
+h2 {
+  font-size: 1.5rem; /* Tamaño de fuente para h2 */
+  font-weight: 600;
+  color: #2980b9; /* Azul para los títulos */
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.25rem; /* Tamaño de fuente para h3 */
+  font-weight: 500;
+  color: #2980b9; /* Azul para los títulos */
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: #ffffff; /* Color de texto más suave para párrafos */
+}
+
+.titulos {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #5cb4e3;
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+  margin: 1rem auto;
+}
+
+a {
+  color: #3498db; /* Color para enlaces */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  box-shadow: 0 0px 6px 3px #05c9f9;
+  background-color: #0b1528;
+  color: #ecf0f1;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+  color: #ecf0f1;
+}
